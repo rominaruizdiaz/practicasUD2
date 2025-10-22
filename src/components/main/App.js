@@ -1,5 +1,5 @@
 import './App.css';
-import MiLista from '../miLista/miLista.js';
+import MiLista from '../miLista/MiLista.js';
 import Header from '../header/Header.js';
 import Footer from '../footer/Footer.js';
 

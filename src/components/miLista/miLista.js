@@ -2,7 +2,7 @@ import './miLista.css';
 import React, {useState} from "react";
 
 //función que siempre retorna un único componente
-function miLista() {
+function MiLista() {
     const [incidencias, setIncidencias] = useState([
         {
         id_incidencia:1,
@@ -53,4 +53,4 @@ function miLista() {
         )
 }
 //por defecto debe tener
-export default miLista
+export default MiLista
