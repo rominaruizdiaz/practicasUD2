@@ -17,7 +17,7 @@ class Formu extends React.Component {
 
   render() {
     return (
-      <div className="card p-4">
+      <div className="card bg-light p-4">
         <h2 className="card-title mb-4 text-center">Registrar incidencia</h2>
 
         <form onSubmit={this.envioFormulario}>
@@ -64,7 +64,7 @@ class Formu extends React.Component {
           </div>
 
           <div className="d-grid col-6 mx-auto">
-            <button type="submit" className="btn btn-success">
+            <button type="submit" className="btn btn-warning btn-lg">
               Registrar incidencia
             </button>
           </div>

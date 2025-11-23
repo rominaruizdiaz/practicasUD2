@@ -5,7 +5,7 @@ import Formu from "../form/Formu.js";
 import Header from "../header/Header.js";
 import Footer from "../footer/Footer.js";
 
-import Fondo from "../../img/fondo.avif";
+import Fondo from "../../img/fondo.png";
 
 function App() {
   const [incidencias, setIncidencia] = useState([
@@ -75,20 +75,28 @@ function App() {
 
   return (
     <div
-      className="card"
+      className="card bg-light p-4"
       style={{
         backgroundImage: `url(${Fondo})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
+        backgroundSize: "auto",
+        backgroundRepeat: "repeat",
       }}
     >
       <Header />
 
-      <h2 className="mb-4 text-center">Mi aplicación</h2>
+      <h2 className="mb-4 text-center">
+        <span className="bg-white text-dark p-2 rounded d-inline-block">
+          Mi aplicación
+        </span>
+      </h2>
 
       <div className="container-fluid mt-4 d-flex row g-5">
         <main className="col-md-6">
-          <p>Esta aplicación muestra el contenido almacenado de mi app:</p>
+          <p>
+            <span className="bg-white text-dark p-1 rounded d-inline-block">
+              Esta aplicación muestra el contenido almacenado de mi app:
+            </span>
+          </p>
           <MiLista incidencias={incidencias} />
         </main>
 
