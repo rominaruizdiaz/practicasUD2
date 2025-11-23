@@ -1,5 +1,4 @@
 import React from "react";
-import "./Formu.css";
 
 class Formu extends React.Component {
   envioFormulario = (event) => {
