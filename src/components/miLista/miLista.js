@@ -1,22 +1,36 @@
-import './miLista.css';
-
 function MiLista(props) {
     return (
-        <>
-            <ul>
-                {props.incidencias.map((i, index) => (
-                    <li key={index}>
-                        <strong>ID:</strong> {i.id_incidencia} <br />
-                        <strong>Título:</strong> {i.titulo} <br />
-                        <strong>Usuario:</strong> {i.id_usuario} <br />
-                        <strong>Descripción:</strong> {i.descripcion} <br />
-                        <strong>Ubicación:</strong> {i.ubicacion} <br />
-                        <strong>Estado:</strong> {i.estado} <br />
-                        <strong>Fecha:</strong> {i.fecha_registro} <br /><br />
-                    </li>
-                ))}
-            </ul>
-        </>
+        <div className="table-responsive">
+            <table className="table table-striped table-hover shadow-sm table-light">
+                
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Usuario</th>
+                        <th>Descripción</th>
+                        <th>Ubicación</th>
+                        <th>Estado</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {props.incidencias.map((i, index) => (
+                        <tr key={index}>
+                            <td>{i.id_incidencia}</td>
+                            <td>{i.titulo}</td>
+                            <td>{i.id_usuario}</td>
+                            <td>{i.descripcion}</td>
+                            <td>{i.ubicacion}</td>
+                            <td>{i.estado}</td>
+                            <td>{i.fecha_registro}</td>
+                        </tr>
+                    ))}
+                </tbody>
+
+            </table>
+        </div>
     );
 }
 

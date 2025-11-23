@@ -1,5 +1,4 @@
 import './App.css';
-import React, { useState } from 'react';
 import MiLista from '../miLista/miLista.js';
 import Formu from '../form/Formu.js';
 import Header from '../header/Header.js';
@@ -75,29 +74,20 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <Header />
-      <main className="app__main">
-        <section className="app__content">
-          <div className="app__panel app__panel--left">
-            <section className="app__intro">
-              <h1 className="app__title">Hola mundo</h1>
-              <h2 className="app__subtitle">Este es mi primer componente React</h2>
-              <p className="app__text">
-                Bienvenido a mi aplicación, esto fue creado con Javascript en React.
-              </p>
-            </section>
-
-            <MiLista incidencias={incidencias} />
-          </div>
-
-          <div className="app__panel app__panel--right">
-            <Formu agregarIncidencia={agregarIncidencia} />
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Header/>
+      <h2 className='mb-4 text-center'> Mi aplicación </h2>
+      <div className="container-fluid mt-4 row">
+        <main className='col-md-6'>
+          <p>Esta aplicación muestra el contenido almacenado de mi app:</p>
+          <Milista incidencias={incidencias}/>
+        </main>
+        <aside className='col-md-6'>
+          <Form agregarIncidencia={agregarIncidencia}/>
+        </aside>
+      </div>
+      <Footer/>
+    </>
   );
 }
 

@@ -18,27 +18,29 @@ class Formu extends React.Component {
 
   render() {
     return (
-      <div className="formulario">
-        <h2>Registrar incidencia</h2>
+      <div className="card p-4">
+        <h2 className="card-title mb-4 text-center">Registrar incidencia</h2>
+
         <form onSubmit={this.envioFormulario}>
-          <div className="elemento-form">
-            <label>Título incidencia</label>
-            <input type="text" name="titulo" required />
+
+          <div className="mb-3">
+            <label className="form-label">Título incidencia</label>
+            <input type="text" name="titulo" required className="form-control" />
           </div>
 
-          <div className="elemento-form">
-            <label>Usuario</label>
-            <input type="text" name="usuario" required />
+          <div className="mb-3">
+            <label className="form-label">Usuario</label>
+            <input type="text" name="usuario" required className="form-control" />
           </div>
 
-          <div className="elemento-form">
-            <label>Descripción</label>
-            <textarea name="descripcion" required></textarea>
+          <div className="mb-3">
+            <label className="form-label">Descripción</label>
+            <textarea name="descripcion" required className="form-control"></textarea>
           </div>
 
-          <div className="elemento-form">
-            <label>Nivel de urgencia</label>
-            <select name="nivel" required>
+          <div className="mb-3">
+            <label className="form-label">Nivel de urgencia</label>
+            <select name="nivel" required className="form-control">
               <option value="">Seleccionar...</option>
               <option value="Alta">Alta</option>
               <option value="Media">Media</option>
@@ -46,9 +48,9 @@ class Formu extends React.Component {
             </select>
           </div>
 
-          <div className="elemento-form">
-            <label>Categoría</label>
-            <select name="categoria" required>
+          <div className="mb-3">
+            <label className="form-label">Categoría</label>
+            <select name="categoria" required className="form-control">
               <option value="">Seleccionar...</option>
               <option value="Hardware">Hardware</option>
               <option value="Software">Software</option>
@@ -57,14 +59,17 @@ class Formu extends React.Component {
             </select>
           </div>
 
-          <div className="elemento-form">
-            <label>Ubicación</label>
-            <input type="text" name="ubicacion" required />
+          <div className="mb-3">
+            <label className="form-label">Ubicación</label>
+            <input type="text" name="ubicacion" required className="form-control" />
           </div>
 
-          <button type="submit" className="elemento-form-button">
-            Registrar
-          </button>
+          <div className="d-grid col-6 mx-auto">
+            <button type="submit" className="btn btn-success">
+              Registrar incidencia
+            </button>
+          </div>
+
         </form>
       </div>
     );

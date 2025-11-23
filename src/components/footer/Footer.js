@@ -1,16 +1,13 @@
 import React from "react";
-import './Footer.css';
 
-class Footer extends React.Component{
-    render(){
-        return(
-            <div className="Footer">
-                <h3>
-                    Lorem ipsum
-                </h3>
+class Footer extends React.Component {
+    render() {
+        return (
+            <div className="bg-dark text-white text-center p-3">
+                <h3>Lorem ipsum</h3>
             </div>
-        )
+        );
     }
 }
 
-export default Footer
+export default Footer;
