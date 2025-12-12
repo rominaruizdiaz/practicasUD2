@@ -6,7 +6,7 @@ class Formu extends React.Component {
     const form = event.target;
 
     this.props.agregarIncidencia(
-      form.usuario.value,
+      form.email.value,
       form.titulo.value,
       form.descripcion.value,
       form.categoria.value,
@@ -28,8 +28,8 @@ class Formu extends React.Component {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Usuario</label>
-            <input type="text" name="usuario" required className="form-control" />
+            <label className="form-label">Email</label>
+            <input type="email" name="email" required className="form-control" />
           </div>
 
           <div className="mb-3">
