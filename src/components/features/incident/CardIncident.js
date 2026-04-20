@@ -1,4 +1,4 @@
-function MiLista(props) {
+function CardIncident(props) {
   return (
     <div className="table-responsive">
       <table
@@ -35,4 +35,4 @@ function MiLista(props) {
   );
 }
 
-export default MiLista;
+export default CardIncident;
