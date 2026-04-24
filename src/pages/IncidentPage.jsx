@@ -7,7 +7,6 @@ import Footer from "../components/ui/footer/Footer.js";
 
 import Fondo from "../assets/fondo.png";
 
-
 function IncidentPage() {
   const INCIDENCIA_API_URL = "http://localhost:3004/incidencias";
   const USUARIO_API_URL = "http://localhost:3004/users";
@@ -123,7 +122,7 @@ function IncidentPage() {
             </span>
           </p>
 
-          <CardIncident incidencias={incidencias} />
+          <CardIncident incidencias={incidencias} usuarios={usuarios} />
         </main>
 
         <aside className="col-md-6">

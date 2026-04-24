@@ -1,4 +1,9 @@
 function CardIncident(props) {
+  const getNombreUsuario = (userId) => {
+    const user = props.usuarios.find((u) => u.id === userId);
+    return user ? user.nombre : "Desconocido";
+  };
+
   return (
     <div className="table-responsive">
       <table
@@ -18,11 +23,11 @@ function CardIncident(props) {
         </thead>
 
         <tbody>
-          {props.incidencias.map((i, index) => (
-            <tr key={index}>
+          {props.incidencias.map((i) => (
+            <tr key={i.id}>
               <td>{i.id}</td>
               <td>{i.titulo}</td>
-              <td>{i.usuario.nombre}</td>
+              <td>{getNombreUsuario(i.userId)}</td>
               <td>{i.descripcion}</td>
               <td>{i.ubicacion}</td>
               <td>{i.estado}</td>
