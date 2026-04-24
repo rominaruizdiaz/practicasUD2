@@ -10,25 +10,39 @@ function Login({ onLogin }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
+    <div className="container d-flex justify-content-center align-items-center vh-100">
+      <div className="card shadow-lg p-4" style={{ width: "100%", maxWidth: "400px" }}>
+        <h2 className="text-center text-primary mb-4">Iniciar sesión</h2>
 
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label className="form-label">Email</label>
+            <input
+              type="email"
+              className="form-control border-primary"
+              placeholder="Introduce tu email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
-      <input
-        type="password"
-        placeholder="Contraseña"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+          <div className="mb-3">
+            <label className="form-label">Contraseña</label>
+            <input
+              type="password"
+              className="form-control border-primary"
+              placeholder="Introduce tu contraseña"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
 
-      <button type="submit">Entrar</button>
-    </form>
+          <button type="submit" className="btn btn-primary w-100">
+            Entrar
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }
 
