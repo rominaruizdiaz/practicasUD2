@@ -10,18 +10,19 @@
     "bootstrap": "^5.3.8",
     "json-server": "^0.17.4",
     "json-server-auth": "^2.1.0",
+    "jwt-decode": "^4.0.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-  "start": "react-scripts start",
-  "api": "json-server-auth --watch ./db/db.json --port 3004",
-  "dev-all": "run-p start api",
-  "build": "react-scripts build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject"
+    "start": "react-scripts start",
+    "api": "json-server-auth --watch ./db/db.json --port 3004",
+    "dev-all": "run-p start api",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

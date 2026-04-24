@@ -6,10 +6,7 @@ function CardIncident(props) {
 
   return (
     <div className="table-responsive">
-      <table
-        className="table table-striped table-hover shadow-sm"
-        style={{ backgroundColor: "rgba(173, 216, 230, 0.3)" }}
-      >
+      <table className="table table-striped table-hover shadow-sm">
         <thead>
           <tr>
             <th>ID</th>
@@ -27,7 +24,7 @@ function CardIncident(props) {
             <tr key={i.id}>
               <td>{i.id}</td>
               <td>{i.titulo}</td>
-              <td>{getNombreUsuario(i.userId)}</td>
+              <td>{getNombreUsuario(i.usuario)}</td>
               <td>{i.descripcion}</td>
               <td>{i.ubicacion}</td>
               <td>{i.estado}</td>

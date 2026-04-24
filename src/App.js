@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import IncidentPage from "./pages/IncidentPage";
+import LoginPage from "./pages/LoginPage";
 
-import LoginPage from "./pages/LoginPage"
+import { jwtDecode } from "jwt-decode";
+
 function App() {
   const LOGIN_API_URL = "http://localhost:3004/login";
   const [usuarioLogueado, setUsuarioLogueado] = useState(null);
@@ -18,12 +20,13 @@ function App() {
 
       if (response.ok) {
         const userData = await response.json();
-        console.log(userData);
+
+        localStorage.setItem(
+          "authToken",
+          JSON.stringify(userData.accessToken)
+        );
 
         setUsuarioLogueado(userData.user);
-
-        localStorage.setItem("user", JSON.stringify(userData.user));
-
       } else {
         const errorData = await response.json();
         alert(`Error ${response.status}: ${JSON.stringify(errorData)}`);
@@ -34,9 +37,20 @@ function App() {
   };
 
   useEffect(() => {
-    const userGuardado = localStorage.getItem("user");
-    if (userGuardado) {
-      setUsuarioLogueado(JSON.parse(userGuardado));
+    const token = localStorage.getItem("authToken");
+
+    if (token) {
+      try {
+        const decoded = jwtDecode(JSON.parse(token));
+
+        setUsuarioLogueado({
+          email: decoded.email,
+          id: decoded.sub,
+        });
+      } catch (e) {
+        console.error("Token inválido");
+        localStorage.removeItem("authToken");
+      }
     }
   }, []);
 
@@ -47,9 +61,7 @@ function App() {
           <LoginPage onLogin={onLogin} />
         </aside>
       ) : (
-        <>
-          <IncidentPage />
-        </>
+        <IncidentPage />
       )}
     </div>
   );
