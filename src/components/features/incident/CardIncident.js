@@ -1,10 +1,12 @@
-function MiLista(props) {
+function CardIncident(props) {
+  const getNombreUsuario = (userId) => {
+    const user = props.usuarios.find((u) => u.id === userId);
+    return user ? user.nombre : "Desconocido";
+  };
+
   return (
     <div className="table-responsive">
-      <table
-        className="table table-striped table-hover shadow-sm"
-        style={{ backgroundColor: "rgba(173, 216, 230, 0.3)" }}
-      >
+      <table className="table table-striped table-hover shadow-sm">
         <thead>
           <tr>
             <th>ID</th>
@@ -18,11 +20,11 @@ function MiLista(props) {
         </thead>
 
         <tbody>
-          {props.incidencias.map((i, index) => (
-            <tr key={index}>
+          {props.incidencias.map((i) => (
+            <tr key={i.id}>
               <td>{i.id}</td>
               <td>{i.titulo}</td>
-              <td>{i.usuario.nombre}</td>
+              <td>{getNombreUsuario(i.usuario)}</td>
               <td>{i.descripcion}</td>
               <td>{i.ubicacion}</td>
               <td>{i.estado}</td>
@@ -35,4 +37,4 @@ function MiLista(props) {
   );
 }
 
-export default MiLista;
+export default CardIncident;

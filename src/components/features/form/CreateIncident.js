@@ -1,6 +1,6 @@
 import React from "react";
 
-class Formu extends React.Component {
+class CreateIncident extends React.Component {
   envioFormulario = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -75,4 +75,4 @@ class Formu extends React.Component {
   }
 }
 
-export default Formu;
+export default CreateIncident;
