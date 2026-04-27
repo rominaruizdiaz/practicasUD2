@@ -137,121 +137,25 @@
   "users": [
     {
       "id": 1,
-      "nombre": "Ana",
-      "email": "ana.lopez@educastur.org",
-      "password": "$2y$10$paOaxwKhEBC4W/cVeG85puc9W/hoMlzquXQ/6hrMD6VdqIc/mEToq",
+      "nombre": "admin",
+      "email": "admin@admin.admin",
+      "password": "$2a$10$0Jz0A6Wi//LR.m7sLd7ZxOuY2AnM35jJkni42PZ.y8hBfZSq58Ui.",
       "rol": {
         "id": 1,
-        "nombre_rol": "comun",
+        "nombre_rol": "user",
         "descripcion": "Usuario regular del sistema"
       },
       "fecha_registro": "2025-10-21"
     },
     {
       "id": 2,
-      "nombre": "Carlos",
-      "email": "carlos.perez@educastur.org",
-      "password": "$2y$10$L2gyx2oL8Gk6gYVukI.v2.63s7/jRtQQZNS4dq3QYPLfVj8zUVXI2",
+      "nombre": "Romina",
+      "email": "romina@romina.romina",
+      "password": "$2a$10$0Jz0A6Wi//LR.m7sLd7ZxOuY2AnM35jJkni42PZ.y8hBfZSq58Ui.",
       "rol": {
         "id": 1,
-        "nombre_rol": "comun",
+        "nombre_rol": "user",
         "descripcion": "Usuario regular del sistema"
-      },
-      "fecha_registro": "2025-10-21"
-    },
-    {
-      "id": 3,
-      "nombre": "Maria",
-      "email": "maria.garcia@educastur.org",
-      "password": "$2y$10$OsAG7turiy1u.Hqt7JHNzOP6.x1u3RPn0eVndlAGWRx2Vg8iU.lKG",
-      "rol": {
-        "id": 1,
-        "nombre_rol": "comun",
-        "descripcion": "Usuario regular del sistema"
-      },
-      "fecha_registro": "2025-10-21"
-    },
-    {
-      "id": 4,
-      "nombre": "Luis",
-      "email": "luis.torres@educastur.org",
-      "password": "$2y$10$gU1byqj/EyDQbUIFaV1b0.vKiCkE3oZZ1BxfVCSxO7z8Y/QIhqmo6",
-      "rol": {
-        "id": 1,
-        "nombre_rol": "comun",
-        "descripcion": "Usuario regular del sistema"
-      },
-      "fecha_registro": "2025-10-21"
-    },
-    {
-      "id": 5,
-      "nombre": "Sofia",
-      "email": "sofia.martinez@educastur.org",
-      "password": "$2y$10$LDI/t9HTHeLtwm61nNej/OYw0BZq0DQi6xgDem5GxRggHgxuSOJ7e",
-      "rol": {
-        "id": 1,
-        "nombre_rol": "comun",
-        "descripcion": "Usuario regular del sistema"
-      },
-      "fecha_registro": "2025-10-21"
-    },
-    {
-      "id": 6,
-      "nombre": "Jorge",
-      "email": "jorge.fernandez@educastur.org",
-      "password": "$2y$10$lKU1gyEGdH/h3DAD97jppuOYCrHVte/X5G85yk7AyYGG1ggRCHgTm",
-      "rol": {
-        "id": 1,
-        "nombre_rol": "comun",
-        "descripcion": "Usuario regular del sistema"
-      },
-      "fecha_registro": "2025-10-21"
-    },
-    {
-      "id": 7,
-      "nombre": "Elena",
-      "email": "elena.sanchez@educastur.org",
-      "password": "$2a$12$UK.ZtKon5qAHPipr/msmCu9mkAB12x7U9yzVPkqug0t5Tpu8U0GYS",
-      "rol": {
-        "id": 1,
-        "nombre_rol": "comun",
-        "descripcion": "Usuario regular del sistema"
-      },
-      "fecha_registro": "2025-10-21"
-    },
-    {
-      "id": 8,
-      "nombre": "Miguel",
-      "email": "miguel.ramirez@educastur.org",
-      "password": "$2y$10$nAZ8jhFEB93.qT45L.ucz.au9gfQ6yayQPjYiMU8jJW8Sa5UQ577i",
-      "rol": {
-        "id": 1,
-        "nombre_rol": "comun",
-        "descripcion": "Usuario regular del sistema"
-      },
-      "fecha_registro": "2025-10-21"
-    },
-    {
-      "id": 9,
-      "nombre": "Patricia",
-      "email": "patricia.gomez@educastur.org",
-      "password": "$2y$10$2xnlupLIDZi4asqQTFUfu.GKWe/Hy8C07R1.CyvVrUq2JBjOoiiZC",
-      "rol": {
-        "id": 2,
-        "nombre_rol": "admin",
-        "descripcion": "Administrador del sistema con permisos totales"
-      },
-      "fecha_registro": "2025-10-21"
-    },
-    {
-      "id": 10,
-      "nombre": "David",
-      "email": "david.ruiz@educastur.org",
-      "password": "$2y$10$WM.h8tqMhvbc//bQasC/0.l/xeQXEs83lcbvFnPzmbUwr5jWcShyW",
-      "rol": {
-        "id": 2,
-        "nombre_rol": "admin",
-        "descripcion": "Administrador del sistema con permisos totales"
       },
       "fecha_registro": "2025-10-21"
     }
@@ -260,7 +164,7 @@
   "roles": [
     {
       "id": 1,
-      "nombre_rol": "comun",
+      "nombre_rol": "user",
       "descripcion": "Usuario regular del sistema"
     },
     {
