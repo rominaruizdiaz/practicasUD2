@@ -21,10 +21,7 @@ function App() {
       if (response.ok) {
         const userData = await response.json();
 
-        localStorage.setItem(
-          "authToken",
-          JSON.stringify(userData.accessToken)
-        );
+        localStorage.setItem("authToken", userData.accessToken);
 
         setUsuarioLogueado(userData.user);
       } else {
@@ -36,12 +33,17 @@ function App() {
     }
   };
 
+  const onLogout = () => {
+    localStorage.removeItem("authToken");
+    setUsuarioLogueado(null);
+  };
+
   useEffect(() => {
     const token = localStorage.getItem("authToken");
 
     if (token) {
       try {
-        const decoded = jwtDecode(JSON.parse(token));
+        const decoded = jwtDecode(token);
 
         setUsuarioLogueado({
           email: decoded.email,
@@ -61,7 +63,7 @@ function App() {
           <LoginPage onLogin={onLogin} />
         </aside>
       ) : (
-        <IncidentPage />
+        <IncidentPage onLogout={onLogout} />
       )}
     </div>
   );

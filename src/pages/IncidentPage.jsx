@@ -7,7 +7,7 @@ import Footer from "../components/ui/footer/Footer.js";
 
 import Fondo from "../assets/fondo.png";
 
-function IncidentPage() {
+function IncidentPage({ onLogout }) {
   const INCIDENCIA_API_URL = "http://localhost:3004/incidencias";
   const USUARIO_API_URL = "http://localhost:3004/users";
 
@@ -65,7 +65,7 @@ function IncidentPage() {
       }
 
       const nuevaIncidencia = {
-        usuario: usuarioEncontrado.id,
+        userId: usuarioEncontrado.id,
         titulo,
         descripcion,
         categoria,
@@ -99,14 +99,21 @@ function IncidentPage() {
 
   return (
     <div
-      className="card bg-light p-4"
+      className="card bg-light p-4 position-relative"
       style={{
         backgroundImage: `url(${Fondo})`,
         backgroundSize: "auto",
         backgroundRepeat: "repeat",
+        minHeight: "100vh"
       }}
     >
       <Header />
+
+      <div className="text-end mt-2 mb-3">
+        <button className="btn btn-danger" onClick={onLogout}>
+          Cerrar sesión
+        </button>
+      </div>
 
       <h2 className="mb-4 text-center">
         <span className="bg-white text-dark p-2 rounded d-inline-block">
