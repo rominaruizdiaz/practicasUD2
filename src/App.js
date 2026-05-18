@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
-import IncidentPage from "./pages/IncidentPage";
 import LoginPage from "./pages/LoginPage";
+import IncidentPage from "./pages/IncidentPage";
 
 import { jwtDecode } from "jwt-decode";
+import { Routes, Route } from "react-router-dom";
+
+import IncidentListPage from "./pages/IncidentListPage";
+import IncidentCreatePage from "./pages/IncidentCreatePage";
+import MenuNav from "./components/features/nav/MenuNav";
 
 function App() {
   const LOGIN_API_URL = "http://localhost:3004/login";
@@ -12,9 +17,7 @@ function App() {
     try {
       const response = await fetch(LOGIN_API_URL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
 
@@ -22,13 +25,11 @@ function App() {
         const userData = await response.json();
 
         localStorage.setItem("authToken", userData.accessToken);
-
         setUsuarioLogueado(userData.user);
       } else {
-        const errorData = await response.json();
-        alert(`Error ${response.status}: ${JSON.stringify(errorData)}`);
+        alert("Error login");
       }
-    } catch (error) {
+    } catch {
       alert("No se puede conectar con el servidor");
     }
   };
@@ -49,8 +50,7 @@ function App() {
           email: decoded.email,
           id: decoded.sub,
         });
-      } catch (e) {
-        console.error("Token inválido");
+      } catch {
         localStorage.removeItem("authToken");
       }
     }
@@ -59,11 +59,21 @@ function App() {
   return (
     <div>
       {!usuarioLogueado ? (
-        <aside>
-          <LoginPage onLogin={onLogin} />
-        </aside>
+        <LoginPage onLogin={onLogin} />
       ) : (
-        <IncidentPage onLogout={onLogout} />
+        <>
+          <MenuNav setUsuarioLogueado={setUsuarioLogueado} onLogout={onLogout} />
+
+          <Routes>
+            <Route
+              path="/"
+              element={<IncidentPage />}
+            >
+              <Route path="incidencias" element={<IncidentListPage />} />
+              <Route path="registrar" element={<IncidentCreatePage />} />
+            </Route>
+          </Routes>
+        </>
       )}
     </div>
   );

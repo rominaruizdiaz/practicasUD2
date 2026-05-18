@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Login({ onLogin }) {
+function LoginPage({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -11,33 +11,24 @@ function Login({ onLogin }) {
 
   return (
     <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="card shadow-lg p-4" style={{ width: "100%", maxWidth: "400px" }}>
-        <h2 className="text-center text-primary mb-4">Iniciar sesión</h2>
+      <div className="card shadow p-4" style={{ width: "400px" }}>
+        <h2 className="text-center mb-3">Login</h2>
 
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label className="form-label">Email</label>
-            <input
-              type="email"
-              className="form-control border-primary"
-              placeholder="Introduce tu email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
+          <input
+            className="form-control mb-2"
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-          <div className="mb-3">
-            <label className="form-label">Contraseña</label>
-            <input
-              type="password"
-              className="form-control border-primary"
-              placeholder="Introduce tu contraseña"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+          <input
+            type="password"
+            className="form-control mb-3"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-          <button type="submit" className="btn btn-primary w-100">
+          <button className="btn btn-primary w-100">
             Entrar
           </button>
         </form>
@@ -46,4 +37,4 @@ function Login({ onLogin }) {
   );
 }
 
-export default Login;
+export default LoginPage;
